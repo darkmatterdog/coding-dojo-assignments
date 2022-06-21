@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    
+    <form action="null">
+        First Name: *<input type="text"><br>
+        Last Name: *<input type="text"><br>
+        Email Address: * <input type="email"><br>
+        Password: * <input type="password"><br>
+        Confirm Password: * <input type="password"><br>
+        Birthday: <input type="date"><br>
+        Gender Identity: <br>
+        <input type="radio" name="gender" id="Male"><label for="gender">Male</label>
+        <input type="radio" name="gender" id="Female"><label for="gender">Female</label>
+        <input type="radio" name="gender" id="Enby"><label for="gender">Non-binary/other</label>
+        <input type="radio" name="gender" id="None"><label for="gender">Prefer not to say</label><br>
+        Short description: <textarea name="desc" id="description" cols="15" rows="3"></textarea><br>
+        Favorite language: <select name="language" id="lang">
+            <option value="JavaScript">JavaScript</option>
+            <option value="Python">Python</option>
+            <option value="English">English</option>
+            <option value="huh">What's a language?</option>
+        </select><br>
+        <input type="checkbox" name="spam" id="spam"><label for="spam">Receive updates in your inbox</label><br>
+        <input type="submit" value="Register now!">
+    </form>
+    <p>* indicates a required field.</p>
+</body>
+</html>
