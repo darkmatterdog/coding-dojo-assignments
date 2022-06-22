@@ -18,7 +18,7 @@
 }
 .main {
     align-content: center;
-    height: 600px;
+    height: 550px;
     width: 76%;
     margin: 20px 0% 0% 5px;
     background-color: red;
@@ -26,7 +26,7 @@
 }
 .sub-content {
     
-    margin: 20px 10px 0% 10px;
+    margin: 20px 0% 0% 20px;
     height: 50%;
     width: 30%;
     background-color: yellow;
