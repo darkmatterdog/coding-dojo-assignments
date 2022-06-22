@@ -1,0 +1,22 @@
+h1 {
+    background-color: black;
+    color: white;
+}
+
+h2{
+text-align: center;
+font-style: italic;
+font-weight: 450;
+background-color: rebeccapurple;
+color: white;
+}
+
+h3{
+text-align: right;
+background-color: skyblue;
+text-decoration: underline;
+}
+
+.cyan {
+    color: cyan;
+}
