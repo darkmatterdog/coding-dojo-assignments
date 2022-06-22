@@ -2,3 +2,13 @@ h1 {
     color: rebeccapurple;
     font-size: 50px;
 }
+
+.classroom{
+    text-align: center;
+    font-family: monospace;
+
+}
+
+#underride{
+    font: bold;
+}
