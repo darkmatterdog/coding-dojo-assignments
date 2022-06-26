@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <div class="header">
+        <div class="navLeft">
+            <h1>Profile</h1>
+            <ul id="headlinks">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">My Profile</a></li>
+                <li><a href="#">Find Connections</a></li>
+            </ul>
+        </div>
+        <div class="navRight">
+            <button id="signout">Sign Out</button>
+        </div>  
+    </div>
+
+
+    <div class="content">
+        <div class="userContent">
+            <div class="userCard">
+                <div id="user-header">
+                    <img src="images/jane-m.jpg" alt="Jane D.">
+                </div>
+                <div id="userCardContent">
+                    <h1>Jane Doe</h1>
+                    <h3><img id="location" src="icons/map-marker.png" alt="">Seattle</h3>
+                    <p>Developer | Engineer | Problem Solver<br>Master of Shadows and the Internet!</p>
+                    <p><img id="edit" src="icons/gear.png" alt="gear"><a href="#">edit profile</a></p>
+                </div>
+            </div>
+            <div class="resume">
+                <div class="banner"><h2>Education</h2></div>
+                <h3>Coding Dojo - Full Stack Bootcamp</h3>
+                <h4>June 2022 - September 2022</h4>
+                <p>Earned triple blackbelt in Python, MERN, and C#.</p>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="connectBox">
+            <div class="requests">
+                    <div class="banner"><h2 id="connectionRequestNumber">2</h2><h2>Connection Requests</h2></div>
+                    <div class="requestContent">
+                        <div class="singleRequest"><img class="newConnectionImage" src="images/todd-s.jpg" alt="todd s."><p>Todd E.</p><img class="connectionRequestAccept" src="icons/accept-circle.png" alt="accept"><img  class="connectionRequestDeny" src="icons/close-circle.png" alt="deny"></div>
+                        <div class="singleRequest"><img class="newConnectionImage" src="images/phil-s.jpg" alt="phil s."><p>Phil K.</p><img class="connectionRequestAccept" src="icons/accept-circle.png" alt="accept"><img  class="connectionRequestDeny" src="icons/close-circle.png" alt="deny"></div>
+                    </div>
+            </div>
+            <div class="connections">
+                <div class="banner"><h2 id="connectionsNumber">500+</h2><h2>Your Connections</h2></div>
+                <div class="oneConnection"><img class="newConnectionImage"" src="images/adrien-s.jpg" alt="adrian s."><p>Adrian S.</p></div>
+                <div class="oneConnection"><img class="newConnectionImage"" src="images/alayne-s.jpg" alt="alayne."><p>Alayne T.</p></div>
+                <div class="oneConnection"><img class="newConnectionImage"" src="images/anne-s.jpg" alt="anne j."><p>Anne J.</p></div>
+                <div class="oneConnection"><img class="newConnectionImage"" src="images/arry-s.jpg" alt="arry y."><p>Arry Y.</p></div>
+                <a id="viewMoreConnections" href="#">View More</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
