@@ -1,0 +1,151 @@
+/* CSS reset */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+/* main and content wrappers */
+.pageWrapper{
+    margin: 0px 15% 0px 15%;
+}
+
+.contentWrapper{
+    display: flex;
+    margin: 20px 0px 0px 0px;
+}
+
+
+
+/* header elements */
+
+.header {
+    background-color: gray;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    padding: 5px 15px 5px 15px;
+}
+
+.header h2 {
+    margin-top: 5px;
+    font-size: 25pt;
+}
+
+#search {
+    height: 50%;
+    align-self: center;
+    border: 3px solid rgb(51, 51, 51);
+}
+
+#login {
+    border: 3px solid rgb(51, 51, 51);
+    color: white;
+    background-color: skyblue;
+    margin: 10px;
+    width: 75px;
+    box-shadow: 4px 4px black;
+}
+
+
+
+/* definition elements */
+
+.definitions {
+    display: inline-flex;
+    flex: 2;
+    height: 100%;
+    margin: 0px 50px 10px 0px;
+    flex-flow: column nowrap;
+}
+
+.singleDefinition{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    border: 3px solid rgb(51, 51, 51);
+    height: 150px;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 25px;
+}
+
+.singleDefinition a{
+    text-decoration: underline;
+}
+
+/* definition left side */
+
+.definitionLeft{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 20%;
+    height: 100%;
+}
+
+.definitionLeft h2{
+    font-size: 30pt;
+}
+
+.likeButton{
+    background-color: yellow;
+    border: 2px solid rgb(51, 51, 51);
+    box-shadow: 3px 3px black;
+    margin: 10%;
+    width: 95px;
+    height: 50px;
+    font-size: 15pt;
+}
+
+
+/* definition right side */
+
+.definitionRight{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    height: 100%;
+}
+
+.definitionRight p{
+    font-size: 20pt;
+    margin: 0px 30px 0px 30px;
+}
+
+/* add definition bits */
+
+.addDef{
+    flex: 1;
+    display: inline-flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid rgb(51, 51, 51);
+    margin: 0px 0px 10px 50px;
+    padding: 20px 10px 20px 10px;
+    height: 75px;
+}
+
+.addDef h3{
+    font-weight: 400;
+    font-size: 19pt;
+}
+
+.bold {
+    font-weight: 900;
+}
+
+.addDefinitionButton{
+    background-color: lightgreen;
+    border: 2px solid rgb(51, 51, 51);
+    box-shadow: 3px 3px black;
+    width: 85%;
+    height: 50%;
+}
