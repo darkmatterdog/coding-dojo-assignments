@@ -1,0 +1,115 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+/* content wrapping */
+
+.pageWrapper{
+    margin: 0px 20% 0px 20%;
+}
+
+.mainContent{
+    display: flex;
+}
+
+
+/* headings */
+.header{
+    background-color: black;
+    color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+#yourFeed{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 25pt;
+}
+
+
+
+/* profile box */
+
+.myProfileBox{
+    position: sticky;
+    top: 15px;
+    display: flex;
+    flex: 1;
+    border: 3px solid black;
+    flex-flow: column nowrap;
+    padding: 25px;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    height: 300px;
+
+}
+
+.myProfileBox img {
+    height: 125px;
+    width: 125px;
+
+}
+
+.myProfileBox a{
+    text-decoration: underline;
+    font-size: 15pt;
+}
+
+
+/* status feed */
+
+.statusFeed{
+    display: flex;
+    flex: 4;
+    flex-flow: column nowrap;
+    margin-left: 50px;
+}
+
+.statusUpdate{
+    padding: 45px 100px 0px 30px;
+    position: relative;
+    width: 100%-50px;
+    height: 250px;
+    border: 3px solid black;
+    margin-bottom: 25px;
+}
+
+.statusUpdate h3{
+    font-size: 20pt;
+    display: inline;
+}
+
+.statusUpdate a{
+    text-decoration: underline;
+}
+
+.likes{
+    display: inline;
+    position: absolute;
+    right: 175px;
+    font-weight: 600;
+}
+
+
+.likeButton{
+    position: absolute;
+    right: 45px;
+    top: 30px;
+    background-color: #ffd966;
+    border: 3px solid black;
+    box-shadow: black 5px 5px;
+    height: 45px;
+    width: 90px; 
+    font-size: 18pt;
+}
+
+
+.statusMessage{
+    padding-top: 30px;
+    font-size: 23pt;
+}
