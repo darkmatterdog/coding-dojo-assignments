@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+
+<body>
+    <div class="pageHeader">
+        <h1>DojoWeather</h1>
+        <a href="#" onclick="weatherLoading()">Burbank</a>
+        <a href="#" onclick="weatherLoading()">Chicago</a>
+        <a href="#" onclick="weatherLoading()">Seattle</a>
+    </div>
+
+    <div class="contentWrapper">
+        <div class="weatherHeader">
+            <h3>Seattle</h3>
+            <p>Show temperature in <select name="units" id="units">
+                <option value="fahrenheit">°F</option>
+                <option value="celsius">°C</option>
+            </select></p>
+        </div>
+
+        <div class="forecast">
+            <div class="dayForecast">
+                <h2>Today</h2>
+                <img src="assets/some_rain.png" alt="somerain">
+                <p>some rain</p>
+                <span class="temps"><p class="temp-high">53°</p> <p class="temp-low">44°</p></span>
+            </div>
+            <div class="dayForecast">
+                <h2>Tomorrow</h2>
+                <img src="assets/some_sun.png" alt="somesun">
+                <p>some sun</p>
+                <span class="temps"><p class="temp-high">64°</p> <p class="temp-low">58°</p></span>
+            </div>
+            <div class="dayForecast">
+                <h2>Friday</h2>
+                <img src="assets/some_clouds.png" alt="somesun">
+                <p>some clouds</p>
+                <span class="temps"><p class="temp-high">60°</p> <p class="temp-low">51°</p></span>
+            </div>
+            <div class="dayForecast">
+                <h2>Saturday</h2>
+                <img src="assets/some_sun.png" alt="somesun">
+                <p>sunny</p>
+                <span class="temps"><p class="temp-high">79°</p> <p class="temp-low">65°</p></span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="cookies">
+        <img src="assets/cookie.png" alt="cookie">
+        <p>This site makes use of third-party cookies. By clicking "I accept," you agree to the terms outlined in our <a href="#">cookie policy.</a></p>
+        <button id="cookiesAccept" onclick="cookiesAccepted()">I Accept</button>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
