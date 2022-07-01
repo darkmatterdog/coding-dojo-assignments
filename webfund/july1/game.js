@@ -57,35 +57,35 @@ function howMany(i, j, element) {
     var adjacent = 0;
     console.log({i, j});
     
-    if(theDojo[j-1]){
+    if(theDojo[i][j-1]){
     adjacent += theDojo[i][j-1];
     }
 
-    if(theDojo[j+1]){
+    if(theDojo[i][j+1]){
     adjacent += theDojo[i][j+1];
     }
 
-    if(theDojo[i-1]){
+    if(theDojo[i-1] && theDojo[i-1][j]){
     adjacent += theDojo[i-1][j];
     }
 
-    if(theDojo[i+1]){
+    if(theDojo[i+1] && theDojo[i+1][j]){
     adjacent += theDojo[i+1][j];
     }
 
-    if(theDojo[i-1] && theDojo[j-1]){
+    if(theDojo[i-1] && theDojo[i-1][j-1]){
     adjacent += theDojo[i-1][j-1];
     }
 
-    if(theDojo[i-1] && theDojo[j+1]){
+    if(theDojo[i-1] && theDojo[i-1][j+1]){
     adjacent += theDojo[i-1][j+1];
     }
 
-    if(theDojo[i+1] && theDojo[j-1]){
+    if(theDojo[i+1] && theDojo[i+1][j-1]){
     adjacent += theDojo[i+1][j-1];
     }
 
-    if(theDojo[i+1] && theDojo[j+1]){
+    if(theDojo[i+1] && theDojo[i+1][j+1]){
     adjacent += theDojo[i+1][j+1];
     }
 
