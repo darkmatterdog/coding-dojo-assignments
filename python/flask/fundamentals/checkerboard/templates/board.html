@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkerboard</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            color: {{ color1 }};
+            background-color: {{ color2 }};
+        }
+        .boardContainer{
+            border: 3px solid black;
+            height: 200px;
+        }
+            
+        .boxColor1{
+            width: 100px;
+            height: 100px;
+            background-color: {{ color1 }};
+        }
+
+        .boxColor2{
+            height: 100px;
+            width: 100px;
+            background-color: {{ color2 }};
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <header><h1>Checksers</h1></header>
+
+    <table class="boardContainer">
+    
+        {% for row in board %}
+            <tr class="rowDiv">
+            {% for column in row %}
+                {% if column == color1 %}
+                    <td class="boxColor1"></td>    
+                {% else %}
+                    <td class="boxColor2"></td>
+                {% endif %}
+            {% endfor %}
+            </tr>
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>
