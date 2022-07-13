@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Edit User {{user.id}}</title>
+</head>
+<body>
+    <h1>Edit User</h1>
+    <form action="/users/edit/{{user.id}}/process" method="POST">
+        <label for="firstname">First Name:</label>
+        <input type="text" name="firstname" id="firstname" value="{{user.first_name}}"><br>
+
+        <label for="lastname">Last Name:</label>
+        <input type="text" name="lastname" id="lastname" value="{{user.last_name}}"><br>
+
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email" value="{{user.email}}"><br>
+        <button type="submit">Submit Changes</button>
+    </form><br>
+    <a href="/users/{{user.id}}">Back</a><br>
+    <a href="/users">Home</a>
+</body>
+</html>
