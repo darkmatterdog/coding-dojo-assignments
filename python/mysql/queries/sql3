@@ -1,0 +1,30 @@
+SET SQL_SAFE_UPDATES = 0;
+
+INSERT INTO dojos (name)
+VALUES ("Coding Dojo"),("Decoding Dojo"),("Encoding Dojo");
+
+DELETE FROM dojos;
+
+
+INSERT INTO dojos (name)
+VALUES ("School Name"),("Better School Name"),("Best School Name");
+
+SELECT * FROM ninjas;
+
+INSERT INTO ninjas (first_name, last_name, age, dojo_id)
+VALUES('John','Egbert',13,4),('Rose','Lalonde',14,4),('Dave','Strider',13,4);
+
+
+INSERT INTO ninjas (first_name, last_name, age, dojo_id)
+VALUES('Jade','Harley',13,5),('June','Egbert',16,5),('Dirk','Strider',15,5);
+
+
+INSERT INTO ninjas (first_name, last_name, age, dojo_id)
+VALUES('Jake','Harley',15,6),('Roxy','Lalonde',14,6),('Andrew','Hussie',30,6);
+
+
+SELECT * from ninjas WHERE dojo_id=4;
+
+SELECT * from ninjas WHERE dojo_id=6;
+
+SELECT dojo_id from ninjas WHERE id=24;
