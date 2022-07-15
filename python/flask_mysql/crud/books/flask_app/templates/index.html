@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Authors</title>
+</head>
+<body>
+
+    <h1>New Author</h1>
+    <form action="/authors/new" method="post">
+        <label for="name">Name:</label>
+        <input type="name" name="name" id="name">
+        <button>Submit</button>
+    </form>
+
+<h1>All Authors</h1>
+<table>
+    {% for author in authors %}
+    <tr>
+        <td><a href="/author/{{author.id[0]}}">{{author.name[0]}}</a></td>
+    </tr>
+    {% endfor %}
+</table><br>
+<a href="/books">Add/View Books > </a>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Books</title>
+</head>
+<body>
+
+    <h1>New Book</h1>
+    <form action="/books/new" method="post">
+        <label for="title">Book Title:</label>
+        <input type="title" name="title" id="title"><br>
+        <label for="num_of_pages">Number of Pages:</label>
+        <input type="number" name="num_of_pages" id="num_of_pages">
+        <button>Submit</button>
+    </form>
+
+<h1>All Books</h1>
+<table>
+    {% for book in books %}
+    <tr>
+        <td><a href="/books/{{book.id[0]}}">{{book.title[0]}}</a></td>
+    </tr>
+    {% endfor %}
+</table><br>
+<a href="/authors"> < Home</a>
+</body>
+</html>
