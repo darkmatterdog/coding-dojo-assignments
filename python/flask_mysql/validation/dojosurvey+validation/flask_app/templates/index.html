@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey Index</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+
+
+<body>
+
+<form action="/process" method="post" class="container border border-primary bg-secondary text-light p-4 w-50">
+    <h1 class="text-center text-info">Dojo Survey</h1>
+    <h5 class="text-center text-danger mb-5">All fields are required.</h5>
+    <label for="name" class="mb-5">Name:</label>
+    <input type="text" name="name" id="name">
+<br>
+    <label for="location" class="mb-5">Dojo Location:</label>
+    <select name="location" id="location">
+        <option value="-1">--Select an option--</option>
+        <option value="Seattle">Seattle</option>
+        <option value="Los Angeles">Los Angeles</option>
+        <option value="Silicon Valley">Silicon Valley</option>
+    </select>
+<br>
+    <label for="language" class="mb-5">Favorite Language:</label>
+    <select name="language" id="language">
+        <option value="-1">--Select an option--</option>
+        <option value="Python">Python</option>
+        <option value="Java">Java</option>
+        <option value="CSS">CSS</option>
+    </select>
+<br>
+    <label for="comments">Comments:</label>
+    <textarea name="comments" id="comments" cols="35" rows="5"></textarea>
+    <input type="submit" value="submit!">
+</form>
+
+{% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+    {% if messages %}                            <!-- check if there are any messages -->
+        {% for message in messages %}            <!-- loop through the messages -->
+            <p class="text-center">{{message}}</p>                   <!-- display each message in a paragraph tag -->
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
