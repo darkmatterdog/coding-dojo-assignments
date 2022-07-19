@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+
+
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-secondary text-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light" href="#">DashboardWall</a>
+            <p>Welcome, {{this_user["first_name"]}}!</p>
+            <a href="/logout" class="text-light">Logout</a>
+        </div>
+        </nav>
+
+
+<h1>Messages for You</h1>
+{% if messages != None %}
+<p>You have {{messages|length}} message(s).</p>
+    {% for in_message in messages %}
+        <h3>Sent by {{in_message.sender[0]}}</h3>
+        <p>{{in_message.message_content[0]}}</p>
+        <p>Sent: {{in_message.created_at[0]}}</p>
+        <a href="/message/{{in_message.id[0]}}/delete">Delete message</a>
+    {% endfor %}
+{% else %}
+    <p>No messages</p>
+{% endif %}
+    
+
+<h1>Send Messages</h1>
+{% with messages = get_flashed_messages(category_filter=["message_error"]) %}
+{% if messages %}
+<div class="container bg-danger bg-opacity-50 p-2">
+    <ul>
+        <h5>Failed to send message.</h5>
+        {% for message in messages %}
+        <li>{{message}}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+{% endwith %}
+<form action="/message/send" method="post">
+    <label for="recipient">Send to:</label>
+    <select name="recipient" id="recipient">
+        {% for user in all_users %}
+            {% if user.id[0] != this_user['id'] %}
+                <option value="{{user.id[0]}}">{{user.first_name[0]}} {{user.last_name[0]}}</option>
+            {% endif %}
+        {% endfor %}
+    </select>
+    <label for="message">Message:</label>
+    <input type="text" name="message" id="message">
+    <button value="submit">Send</button>
+</form>
+
+
+</div>    
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
