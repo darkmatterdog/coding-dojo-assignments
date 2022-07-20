@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recipes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+
+
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-secondary text-light">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light" href="#">Recipes</a>
+            <p>Welcome, {{this_user["first_name"]}}!</p>
+            <a href="/recipes/new" class="text-light">+ Create</a>
+            <a href="/logout" class="text-light">Logout</a>
+        </div>
+        </nav>
+
+        
+<div class="container mt-4">
+    <h3 class="text-center">All posted recipes:</h3>
+
+    <table class="table table-striped">
+        <tr>
+            <th>Name</th>
+            <th>Under 30?</th>
+            <th>Posted By</th>
+            <th>Actions</th>
+        </tr>
+        {% for recipe in recipes %}
+        <tr>
+            <td>{{recipe.name[0]}}</td>
+            <td>{{recipe.under_30}}</td>
+            <td>{{recipe.user.first_name[0]}} {{recipe.user.last_name[0]}}</td>
+            <td>
+                <a href="/recipes/{{recipe.id[0]}}">view recipe</a>
+                {% if recipe.user_id[0] == this_user['id'] %}
+                    | <a href="/recipes/edit/{{recipe.id[0]}}">edit</a>
+                    | <a href="/recipes/delete/{{recipe.id[0]}}">delete</a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>

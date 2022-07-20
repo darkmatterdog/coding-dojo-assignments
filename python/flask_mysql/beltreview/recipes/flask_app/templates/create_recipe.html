@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Recipe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-secondary text-light">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light" href="#">Recipes</a>
+            <p>Welcome, {{this_user["first_name"]}}!</p>
+            <a href="/recipes" class="text-light">< Back to Recipes </a>
+            <a href="/logout" class="text-light">Logout</a>
+        </div>
+        </nav>
+
+        
+        <form action="/recipes/create" method="POST" class="container d-flex flex-column">
+        <h3 class="text-center">Add new Recipe</h3>
+        {% with messages = get_flashed_messages(category_filter=["recipe_error"]) %}
+        {% if messages %}
+            <div class="container bg-danger bg-opacity-50 p-2">
+                <ul>
+                <h5>Recipe creation failed.</h5>
+                {% for message in messages %}
+                <li>{{message}}</li>
+                {% endfor %}
+            </ul>
+            </div>
+            {% endif %}
+            {% endwith %}
+
+
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name"><br>
+            <label for="description">Description:</label>
+            <textarea name="description" id="description" cols="30" rows="5"></textarea>
+            <label for="instructions">Instructions:</label>
+            <textarea name="instructions" id="instructions" cols="30" rows="5"></textarea>
+            <p>Under 30 minutes?</p>
+            <div class="yes">
+                <label for="under_30">Yes</label>
+                <input type="radio" name="under_30" id="under_30" value="Yes">
+            </div>
+            <div class="no">
+                <label for="under_30">No</label>
+                <input type="radio" name="under_30" id="under_30" value="No" checked>
+            </div>
+
+            <label for="cooked_on">Cooked On:</label>
+            <input type="date" name="cooked_on" id="cooked_on">
+            <div class="buttons">
+                <button>Submit</button>
+                <button type="reset">Clear</button>
+            </div>
+        </form>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
