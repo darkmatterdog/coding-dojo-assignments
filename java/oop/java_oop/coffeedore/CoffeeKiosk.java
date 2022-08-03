@@ -50,7 +50,7 @@ public class CoffeeKiosk {
             itemNumber = System.console().readLine();
         }
         
-
+        this.orders.add(newOrder);
         System.out.println(newOrder.getItems());
     }
 
