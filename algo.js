@@ -22,28 +22,13 @@ class SinglyLinkedList {
             return nextItem;
     }
 
-    getLastItem(index){
-        
-    }
-
-
-
     insertAtBack(data) {
         let item = new ListNode(data);
         if(this.isEmpty()){ this.head = item }
         else{
             this.getLastItem().next = item;
-            return this.getLastItem();
         }
     }
-
-    deleteFromBack(){
-        if(this.isEmpty()){ return null }
-        else{
-            
-        }
-    }
-
 
     insertAtFront(data){
         let item = new ListNode(data);
@@ -55,7 +40,6 @@ class SinglyLinkedList {
             this.head = newHead;
         }
     }
-
 
     deleteFromFront(){
         let newHead = this.head.next;
@@ -70,7 +54,7 @@ class SinglyLinkedList {
 
             let nextItem = this.head
             let nodeIndex = 0; 
-            while(nextItem.next != null){
+            while(nextItem != null){
                 console.log("Node " + nodeIndex + ": " +nextItem.data);
                 nextItem = nextItem.next;
                 nodeIndex++;
@@ -78,16 +62,44 @@ class SinglyLinkedList {
         }
     }
 
+    seedFromArr(vals) {
+        for(var i = 0; i < vals.length; i++){
+            this.insertAtBack(vals[i]);
+        }
+    }
+
+    toArr() {
+        let listArray = [];
+        let pointer = this.head;
+        while(pointer != null){
+            listArray.push(pointer.data);
+            pointer = pointer.next;
+        }
+        return listArray;
+    }
+
+    insertAtBackRecursive(data, runner = this.head) {
+        if(runner.next == null){
+            let lastCar = new ListNode(data)
+            runner.next = lastCar;
+            return lastCar;
+        }
+        this.insertAtBackRecursive(data, runner.next);
+    }
+
 }
 
 
 
-let singlyLinkedList = new SinglyLinkedList;
+let train = new SinglyLinkedList;
 
-console.log(singlyLinkedList.isEmpty());
+let newCars = [1.1, "traincar", true, 99999, "BNSF"]
 
-singlyLinkedList.insertAtFront("Name");
-singlyLinkedList.insertAtFront("Nom");
-singlyLinkedList.insertAtFront("N");
+train.seedFromArr(newCars);
 
-singlyLinkedList.display();
+train.insertAtBackRecursive("here's some data!");
+
+
+train.display();
+
+console.log(train.toArr());
