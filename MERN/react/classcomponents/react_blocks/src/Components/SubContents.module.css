@@ -1,0 +1,7 @@
+.div{
+    background-color: yellow;
+    width: 100%;
+    flex: 3;
+    height: 400px;
+    margin: 5px;
+}
